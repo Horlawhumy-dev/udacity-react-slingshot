@@ -29,10 +29,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - restore_cache:
-          keys: 
-            - "npm packages"
-      - run: npm audit
+      - run: echo "Done with the jobs"
 
 workflows:
   my_workflow:
@@ -43,4 +40,4 @@ workflows:
             - build
       - analyze:
           requires:
-            - build
+            - test
